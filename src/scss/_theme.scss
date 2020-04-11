@@ -1,0 +1,50 @@
+/* Text */
+// Use: class="fs-* fs-sm-*" step 2 to 40
+// Use: class="rfs-*" step 2 to 40
+
+$font-size: ();
+
+$fs: 10;
+
+@while $fs < 40 {
+  $fs: $fs + 2;
+
+  $font-size: map-merge(
+                  (
+                          #{$fs}: #{$fs}px,
+                  ),
+                  $font-size
+  );
+}
+
+@each $breakpoint in map-keys($grid-breakpoints) {
+  @include media-breakpoint-up($breakpoint) {
+    $infix: breakpoint-infix($breakpoint, $grid-breakpoints);
+
+    @each $prop, $abbrev in (font-size: fs) {
+      @each $size, $length in $font-size {
+        .#{$abbrev}#{$infix}-#{$size} {
+          #{$prop}: #{$length} !important;
+        }
+      }
+    }
+  }
+}
+
+$rfs: 10;
+
+@while $rfs < 40 {
+  $rfs: $rfs + 2;
+
+  .rfs-#{$rfs} {
+    @include rfs($rfs);
+  }
+}
+
+// body colors
+body {
+  font-family: 'Lato', sans-serif;
+  box-sizing: border-box;
+  color: $nero;
+  background: $cold-morning;
+}

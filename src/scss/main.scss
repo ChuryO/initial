@@ -1,0 +1,36 @@
+// Google Fonts
+//@import url('https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700|Open+Sans:300,400,600,700&display=swap&subset=latin-ext');
+//@import url('https://fonts.googleapis.com/css?family=Playfair+Display:400,400i&display=swap&subset=latin-ext');
+@import url('https://fonts.googleapis.com/css?family=Lato:400,400i,700&display=swap');
+
+// Font Awesome
+$fa-font-path: '~@fortawesome/fontawesome-free/webfonts';
+@import "~@fortawesome/fontawesome-free/scss/fontawesome";
+@import "~@fortawesome/fontawesome-free/scss/regular";
+@import "~@fortawesome/fontawesome-free/scss/solid";
+@import "~@fortawesome/fontawesome-free/scss/brands";
+
+
+// Colors
+// Tip: https://codepen.io/meodai/full/mEvZRx
+
+//$enable-gradients: true;
+
+$body-color: #000;
+$nero: #262626;
+$cultured: #F6F3F3;
+$cold-morning: #E5E5E5;
+$primary: #EB4815;
+$white: #fff;
+
+$theme-colors: (
+        "body-color": $body-color,
+        "nero": $nero,
+        "cultured": $cultured,
+        "cold-morning": $cold-morning,
+        "primary": $primary,
+        "white": $white
+);
+
+@import "~bootstrap/scss/bootstrap";
+@import "theme";
